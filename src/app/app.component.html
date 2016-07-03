@@ -1,0 +1,16 @@
+<h1>Quiz</h1>
+<form>
+    <ul>
+        <li *ngFor="let question of questions">
+            <question (answer)="onAnswer(question.id,$event)" [question]="question"
+                           [correct]="isCorrect(question.id)"></question>
+        </li>
+    </ul>
+    <p *ngIf="!checked">
+        <button (click)="check()">Check</button>
+    </p>
+</form>
+<p *ngIf="checked">
+    Score: {{correctAnswers.size/correctAnswers.length}}
+    ({{ correctAnswers.size / questions.length | percent }})
+</p>

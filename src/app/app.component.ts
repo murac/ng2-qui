@@ -3,11 +3,12 @@ import {Component} from '@angular/core';
 import {QuestionComponent} from "./question.component";
 import {QuizService} from "./quiz.service";
 import {Question} from "./question";
+import {HTTP_PROVIDERS} from "@angular/http";
 
 @Component({
     selector: 'quiz-app',
     directives: [QuestionComponent],
-    providers: [QuizService],
+    providers: [QuizService, HTTP_PROVIDERS],
     template: require('./app.component.html')
 })
 export class AppComponent {
@@ -16,7 +17,7 @@ export class AppComponent {
     private answers = new Map<string, string>();
 
     constructor(private _quizService:QuizService) {
-        this.questions = _quizService.questions;
+        _quizService.getQuestions().then(questions => this.questions = questions);
     }
 
 

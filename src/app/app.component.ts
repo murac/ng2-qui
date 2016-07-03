@@ -22,7 +22,6 @@ export class AppComponent {
 
     onAnswer(questionId:string, answerId:string) {
         this.answers.set(questionId, answerId);
-        console.log(this.answers);
     }
 
     isCorrect(questionId):boolean {

@@ -3,7 +3,8 @@
     <label>
         <input type="radio" [name]="question.id" [value]="option.id"
                (click)="answer.emit($event.target.value)" [disabled]="checked">
-    </label>{{option.text}}
-    <p *ngIf="correct === true">✔ Correct</p>
-    <p *ngIf="correct === false">✘ Incorrect</p>
+        {{option.text}}
+    </label>
 </div>
+<p *ngIf="correct === true">&#10004; Correct</p>
+<p *ngIf="correct === false">&#10006; Incorrect</p>

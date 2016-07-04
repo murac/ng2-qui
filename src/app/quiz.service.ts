@@ -12,7 +12,7 @@ export class QuizService {
     }
 
     getQuestions(): Promise<Question[]>{
-        return this._http.get('/questions.json').toPromise().then(response => this._questions = response.json());
+        return this._http.get('/angular/quiz/questions.json').toPromise().then(response => this._questions = response.json());
     }
 
     check(answers:Map<string, string>):Set<string> {

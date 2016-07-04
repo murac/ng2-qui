@@ -11,11 +11,12 @@ module.exports = {
         loaders: [
             {test: /\.ts$/, loader: 'ts'},
             {test: /\.html$/, loader: 'raw'},
-            {test: /\.css$/, loader: 'raw'}
+            {test: /\.css$/, loader: 'raw'},
+            {test: /\.json$/, loader: 'raw'}
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.ts', '.html', '.css']
+        extensions: ['', '.js', '.ts', '.html', '.css','.json']
     },
     plugins: [
         new HtmlWebpackPlugin({
